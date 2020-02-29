@@ -1,0 +1,16 @@
+c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\bin\Debug\PersonaCurp.exe.config
+c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\bin\Debug\PersonaCurp.exe
+c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\bin\Debug\PersonaCurp.pdb
+c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\bin\Debug\EntityFramework.dll
+c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\bin\Debug\EntityFramework.xml
+c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\obj\Debug\PersonaCurp.csprojResolveAssemblyReference.cache
+c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\obj\Debug\PersonaCurp.Properties.Resources.resources
+c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\obj\Debug\PersonaCurp.csproj.GenerateResource.Cache
+c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\obj\Debug\PersonaCurp.exe
+c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\obj\Debug\PersonaCurp.pdb
+c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\obj\Debug\PersonaCurp.Form1.resources
+c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\bin\Debug\CurpValidator.dll
+c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\obj\Debug\PersonaCurp.FormNuevaPersona.resources
+c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\bin\Debug\Critza.Bibliotecas.dll
