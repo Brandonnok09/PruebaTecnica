@@ -10,7 +10,7 @@ c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\
 c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\obj\Debug\PersonaCurp.csproj.GenerateResource.Cache
 c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\obj\Debug\PersonaCurp.exe
 c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\obj\Debug\PersonaCurp.pdb
-c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\obj\Debug\PersonaCurp.Form1.resources
 c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\bin\Debug\CurpValidator.dll
 c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\obj\Debug\PersonaCurp.FormNuevaPersona.resources
 c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\bin\Debug\Critza.Bibliotecas.dll
+c:\users\personal\documents\visual studio 2015\Projects\PersonaCurp\PersonaCurp\obj\Debug\PersonaCurp.FormPresentacion.resources

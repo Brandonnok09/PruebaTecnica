@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_Nombre = new System.Windows.Forms.Label();
             this.lbl_ApellidoP = new System.Windows.Forms.Label();
             this.lbl_ApellidoMaterno = new System.Windows.Forms.Label();
@@ -54,6 +55,8 @@
             this.cbox_Estado = new System.Windows.Forms.ComboBox();
             this.cbox_Sexo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.epError = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Nombre
@@ -283,6 +286,10 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "DATOS DOMICILIO ACTUAL";
             // 
+            // epError
+            // 
+            this.epError.ContainerControl = this;
+            // 
             // FormNuevaPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,6 +323,7 @@
             this.Controls.Add(this.lbl_Nombre);
             this.Name = "FormNuevaPersona";
             this.Text = "Datos Persona";
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +357,6 @@
         private System.Windows.Forms.ComboBox cbox_Estado;
         private System.Windows.Forms.ComboBox cbox_Sexo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider epError;
     }
 }

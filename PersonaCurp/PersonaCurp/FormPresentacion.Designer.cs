@@ -1,6 +1,6 @@
 ﻿namespace PersonaCurp
 {
-    partial class Form1
+    partial class FormPresentacion
     {
         /// <summary>
         /// Variable del diseñador necesaria.

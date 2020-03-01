@@ -42,7 +42,7 @@ namespace PersonaCurp
             cbox_Sexo.Items.Add("Masculino");
             cbox_Sexo.Items.Add("Femenino");
 
-            cbox_EstadoNacimiento.Items.Add("Aguscalientes");
+            cbox_EstadoNacimiento.Items.Add("Aguascalientes");
             cbox_EstadoNacimiento.Items.Add("BajaCalifornia");
             cbox_EstadoNacimiento.Items.Add("BajaCaliforniaSur");
             cbox_EstadoNacimiento.Items.Add("Campeche");
@@ -76,7 +76,7 @@ namespace PersonaCurp
             cbox_EstadoNacimiento.Items.Add("Yucatan");
             cbox_EstadoNacimiento.Items.Add("Zacatecas");
 
-            cbox_Estado.Items.Add("Aguscalientes");
+            cbox_Estado.Items.Add("Aguascalientes");
             cbox_Estado.Items.Add("BajaCalifornia");
             cbox_Estado.Items.Add("BajaCaliforniaSur");
             cbox_Estado.Items.Add("Campeche");
@@ -110,13 +110,11 @@ namespace PersonaCurp
             cbox_Estado.Items.Add("Zacatecas");
         }
 
-
-        
-
+         
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
 
-            
+            ValidarCampos();
 
             if ("Aguascalientes".Equals(cbox_EstadoNacimiento.Text))
             {
@@ -313,7 +311,7 @@ namespace PersonaCurp
                     curp = CurpClass.CreateCURP(tbox_Nombres.Text.Trim(), tbox_ApellidP.Text.Trim(), tbox_ApellidpM.Text.Trim(), dtime_FechaNacimiento.Value, Genres.Female, FederalEntities.Mexico);
                 }
             }
-            else if ("Michoacan".Equals(cbox_EstadoNacimiento))
+            else if ("Michoacan".Equals(cbox_EstadoNacimiento.Text))
             {
 
                 if (cbox_Sexo.Text.Equals("Masculino"))
@@ -552,45 +550,54 @@ namespace PersonaCurp
 
             using (ContextPersona db = new ContextPersona())
             {
-                if (idPersona == null)
+                try
                 {
-                    
-                    Persona p = new Persona();
-                    p.Nombre = tbox_Nombres.Text.Trim();
-                    p.Apellido_Paterno = tbox_ApellidP.Text.Trim();
-                    p.Apellido_Materno = tbox_ApellidpM.Text.Trim();
-                    p.Fecha_Nacimiento = dtime_FechaNacimiento.Value;
-                    p.Sexo = cbox_Sexo.Text;
-                    p.Estado_Nacimiento = cbox_EstadoNacimiento.Text;
-                    p.Telefono = Convert.ToInt64(tbox_Telefono.Text.Trim());
-                    p.Estado = cbox_Estado.Text;
-                    p.Municipio = tbox_Municipio.Text.Trim();
-                    p.Colonia = tbox_Colonia.Text.Trim();
-                    p.Calle = tbox_Calle.Text.Trim();
-                    p.Numero = Convert.ToInt32(tbox_Numero.Text.Trim());
-                    p.Curp = curp;
-                    db.Persona.Add(p);
-                }
-                else
-                {
-                    Persona p = db.Persona.Find(idPersona);
-                    p.Nombre = tbox_Nombres.Text.Trim();
-                    p.Apellido_Paterno = tbox_ApellidP.Text.Trim();
-                    p.Apellido_Materno = tbox_ApellidpM.Text.Trim();
-                    p.Fecha_Nacimiento = dtime_FechaNacimiento.Value;
-                    p.Sexo = cbox_Sexo.Text;
-                    p.Estado_Nacimiento = cbox_EstadoNacimiento.Text;
-                    p.Telefono = Convert.ToInt64(tbox_Telefono.Text.Trim());
-                    p.Estado = cbox_Estado.Text;
-                    p.Municipio = tbox_Municipio.Text.Trim();
-                    p.Colonia = tbox_Colonia.Text.Trim();
-                    p.Calle = tbox_Calle.Text.Trim();
-                    p.Numero = Convert.ToInt32(tbox_Numero.Text.Trim());
-                    p.Curp = curp;
-                }
+                    if (idPersona == null)
+                    {
 
-                db.SaveChanges();
-                this.Close();
+                        Persona p = new Persona();
+                        p.Nombre = tbox_Nombres.Text.Trim();
+                        p.Apellido_Paterno = tbox_ApellidP.Text.Trim();
+                        p.Apellido_Materno = tbox_ApellidpM.Text.Trim();
+                        p.Fecha_Nacimiento = dtime_FechaNacimiento.Value;
+                        p.Sexo = cbox_Sexo.Text;
+                        p.Estado_Nacimiento = cbox_EstadoNacimiento.Text;
+                        p.Telefono = Convert.ToInt64(tbox_Telefono.Text.Trim());
+                        p.Estado = cbox_Estado.Text;
+                        p.Municipio = tbox_Municipio.Text.Trim();
+                        p.Colonia = tbox_Colonia.Text.Trim();
+                        p.Calle = tbox_Calle.Text.Trim();
+                        p.Numero = Convert.ToInt32(tbox_Numero.Text.Trim());
+                        p.Curp = curp;
+                        db.Persona.Add(p);
+                    }
+                    else
+                    {
+                        Persona p = db.Persona.Find(idPersona);
+                        p.Nombre = tbox_Nombres.Text.Trim();
+                        p.Apellido_Paterno = tbox_ApellidP.Text.Trim();
+                        p.Apellido_Materno = tbox_ApellidpM.Text.Trim();
+                        p.Fecha_Nacimiento = dtime_FechaNacimiento.Value;
+                        p.Sexo = cbox_Sexo.Text;
+                        p.Estado_Nacimiento = cbox_EstadoNacimiento.Text;
+                        p.Telefono = Convert.ToInt64(tbox_Telefono.Text.Trim());
+                        p.Estado = cbox_Estado.Text;
+                        p.Municipio = tbox_Municipio.Text.Trim();
+                        p.Colonia = tbox_Colonia.Text.Trim();
+                        p.Calle = tbox_Calle.Text.Trim();
+                        p.Numero = Convert.ToInt32(tbox_Numero.Text.Trim());
+                        p.Curp = curp;
+                    }
+
+                    db.SaveChanges();
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);;
+                }
+                
 
             }
 
@@ -599,23 +606,76 @@ namespace PersonaCurp
 
         public void getPersona()
         {
-            using (ContextPersona db = new ContextPersona())
+            try
             {
-                Persona p = db.Persona.Find(idPersona);
-                tbox_Nombres.Text = p.Nombre;
-                tbox_ApellidP.Text = p.Apellido_Paterno;
-                tbox_ApellidpM.Text = p.Apellido_Materno;
-                dtime_FechaNacimiento.Text = p.Fecha_Nacimiento.ToString();
-                cbox_Sexo.Text = p.Sexo;
-                cbox_EstadoNacimiento.Text = p.Estado_Nacimiento;
-                tbox_Telefono.Text = p.Telefono.ToString();
-                cbox_Estado.Text = p.Estado;
-                tbox_Municipio.Text = p.Municipio;
-                tbox_Colonia.Text = p.Colonia;
-                tbox_Calle.Text = p.Calle;
-                tbox_Numero.Text = p.Numero.ToString();
+                using (ContextPersona db = new ContextPersona())
+                {
+                    Persona p = db.Persona.Find(idPersona);
+                    tbox_Nombres.Text = p.Nombre;
+                    tbox_ApellidP.Text = p.Apellido_Paterno;
+                    tbox_ApellidpM.Text = p.Apellido_Materno;
+                    dtime_FechaNacimiento.Text = p.Fecha_Nacimiento.ToString();
+                    cbox_Sexo.Text = p.Sexo;
+                    cbox_EstadoNacimiento.Text = p.Estado_Nacimiento;
+                    tbox_Telefono.Text = p.Telefono.ToString();
+                    cbox_Estado.Text = p.Estado;
+                    tbox_Municipio.Text = p.Municipio;
+                    tbox_Colonia.Text = p.Colonia;
+                    tbox_Calle.Text = p.Calle;
+                    tbox_Numero.Text = p.Numero.ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);;
+            }
+
+        }
+
+
+        public bool ValidarCampos()
+        {
+            bool ok = true;
+
+            if (tbox_Nombres.Text == "")
+            {
+                ok = false;
+                epError.SetError(tbox_Nombres, "Introduce Nombre...");
 
             }
+
+            if (tbox_ApellidP.Text == "")
+            {
+                ok = false;
+                epError.SetError(tbox_ApellidP, "Introduce Apellido Paterno...");
+
+            }
+
+            if (tbox_ApellidpM.Text == "")
+            {
+                ok = false;
+                epError.SetError(tbox_ApellidpM, "Introduce Apellido Materno...");
+
+            }
+
+            if (cbox_EstadoNacimiento.Text == "")
+            {
+                ok = false;
+                epError.SetError(cbox_EstadoNacimiento, "Introduce Apellido Materno...");
+
+            }
+
+            if (cbox_Sexo.Text == "")
+            {
+                ok = false;
+                epError.SetError(cbox_Sexo, "Introduce Apellido Materno...");
+
+            }
+            
+            return ok;
+
         }
     }
 }

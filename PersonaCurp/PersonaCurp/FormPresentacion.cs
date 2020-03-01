@@ -12,9 +12,9 @@ using CurpValidator;
 
 namespace PersonaCurp
 {
-    public partial class Form1 : Form
+    public partial class FormPresentacion : Form
     {        
-        public Form1()
+        public FormPresentacion()
         {
             InitializeComponent();
         }
@@ -28,12 +28,21 @@ namespace PersonaCurp
 
         public void getPersonas()
         {
-            using (ContextPersona db = new ContextPersona())
+            try
             {
-                var lst = from p in db.Persona select p;
-                data_Personas.DataSource = lst.ToList();
-                
+                using (ContextPersona db = new ContextPersona())
+                {
+                    var lst = from p in db.Persona select p;
+                    data_Personas.DataSource = lst.ToList();
+
+                }
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);;
+            }
+            
         }
 
         private void btn_Nueva_Click(object sender, EventArgs e)
@@ -59,16 +68,26 @@ namespace PersonaCurp
         {
             int? id = Convert.ToInt16(data_Personas.Rows[data_Personas.CurrentRow.Index].Cells[0].Value.ToString());
 
-            if (id != null)
+
+            try
             {
-                using (ContextPersona db = new ContextPersona())
+                if (id != null)
                 {
-                    Persona p = db.Persona.Find(id);
-                    db.Persona.Remove(p);
-                    db.SaveChanges();
+                    using (ContextPersona db = new ContextPersona())
+                    {
+                        Persona p = db.Persona.Find(id);
+                        db.Persona.Remove(p);
+                        db.SaveChanges();
+                    }
+                    getPersonas();
                 }
-                getPersonas();
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);;
+            }
+            
         }
     }
 }
